@@ -1,0 +1,102 @@
+/* Sidebar container */
+.dashboard-sidebar {
+  width: 250px;
+  background-color: #f8fafc;
+  height: 100vh;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dashboard logo/title */
+.dashboard-logo {
+  font-size: 12px;
+  font-weight: 500;
+  color: #9199A3;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #e2e8f0;
+  margin-bottom: 20px;
+}
+
+/* Menu list */
+.dashboard-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dashboard-menu li {
+  margin-bottom: 15px;
+}
+
+/* NavLink styles */
+.dashboard-menu a {
+  text-decoration: none;
+  font-size: 16px;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dashboard-menu a .icon {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+.dashboard-menu a.active,
+.dashboard-menu a:hover {
+  background-color: #E7F0FA;
+  color: #0A65CC;
+}
+
+/* Logout section */
+.logout-section {
+  margin-top: auto;
+  text-align: center;
+}
+
+.logout {
+  background: none;
+  border: none;
+  color: #475569;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 10px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.logout:hover {
+  background-color: #ef4444;
+  color: #fff;
+}
+
+.logout .icon {
+  margin-right: 8px;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .dashboard-sidebar {
+    width: 200px;
+  }
+
+  .dashboard-menu a {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  .dashboard-menu a .icon,
+  .logout .icon {
+    font-size: 16px;
+  }
+}

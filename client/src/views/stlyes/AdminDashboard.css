@@ -1,0 +1,101 @@
+/* AdminDashboard.css */
+
+.admin-dashboard {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Navbar styling */
+  .navbar {
+    background-color: #f8f9fa;
+    padding: 10px 20px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .content {
+    flex: 1;
+    padding: 20px;
+    background-color: #f7f8fa;
+  }
+  
+  .dashboard-header {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .dashboard-header button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+    color: #333;
+    cursor: pointer;
+  }
+  
+  .dashboard-header button.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .user-list, .job-list {
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-card, .job-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  
+  .user-card:last-child, .job-card:last-child {
+    border-bottom: none;
+  }
+  
+  .user-info, .job-info {
+    flex: 1;
+  }
+  
+  .user-info h3, .job-info h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .user-info p, .job-info p {
+    margin: 5px 0 0;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  button.view-profile, button.view-job {
+    padding: 5px 10px;
+    margin-right: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button.delete-profile, button.delete-job {
+    padding: 5px 10px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button.view-profile:hover, button.view-job:hover,
+  button.delete-profile:hover, button.delete-job:hover {
+    opacity: 0.9;
+  }
+  

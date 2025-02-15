@@ -1,0 +1,131 @@
+services:
+  auth-service:
+    build:
+      context: ./server/authService
+    ports:
+      - "5001:5001"
+    env_file:
+      - ./.env
+    volumes:
+      - ./server/authService:/app  
+      - /app/node_modules           
+    environment:
+      - NODE_ENV=development       
+      - CHOKIDAR_USEPOLLING=true
+    command: ["nodemon", "index.js"] 
+
+  recruiter-service:
+    build:
+      context: ./server/recruiterService
+    ports:
+      - "5002:5002"
+    env_file:
+      - ./.env
+    volumes:
+      - ./server/recruiterService:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+    command: ["nodemon", "index.js"]
+
+  applicant-service:
+    build:
+      context: ./server/applicantService
+    ports:
+      - "5003:5003"
+    env_file:
+      - ./.env
+    volumes:
+      - ./server/applicantService:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - CHOKIDAR_USEPOLLING=true
+    command: ["nodemon", "index.js"]
+
+  admin-service:
+      build:
+        context: ./server/adminService
+      ports:
+        - "5004:5004"
+      env_file:
+        - ./.env
+      volumes:
+        - ./server/adminService:/app
+        - /app/node_modules
+      environment:
+        - NODE_ENV=development
+        - CHOKIDAR_USEPOLLING=true
+      command: ["nodemon", "index.js"]
+
+  client:
+    build:
+      context: ./client
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./client:/app:delegated 
+      - /app/node_modules 
+    environment:
+      - HOST=0.0.0.0 
+      - CHOKIDAR_USEPOLLING=true
+    command: ["npm", "run", "dev"] 
+    
+
+  mongodb:
+    image: mongo
+    ports:
+      - "27017:27017"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# version: '3.8'
+
+# services:
+#   auth-service:
+#     build:
+#       context: ./server/authService
+#     ports:
+#       - "3001:3001"
+#     environment:
+#       - MONGODB_URI=mongodb+srv://bilalhussain199682:3Q25SGrjY6RZcgXH@mongocrm.yxcn1rw.mongodb.net/authServiceDB?retryWrites=true&w=majority
+
+#   recruiter-service:
+#     build:
+#       context: ./server/recruiterService
+#     ports:
+#       - "3002:3002"
+#     environment:
+#       - MONGODB_URI=mongodb+srv://bilalhussain199682:3Q25SGrjY6RZcgXH@mongocrm.yxcn1rw.mongodb.net/authServiceDB?retryWrites=true&w=majority
+
+#   applicant-service:
+#     build:
+#       context: ./server/applicantService
+#     ports:
+#       - "3003:3003"
+#     environment:
+#       - MONGODB_URI=mongodb+srv://bilalhussain199682:3Q25SGrjY6RZcgXH@mongocrm.yxcn1rw.mongodb.net/authServiceDB?retryWrites=true&w=majority
+
+#   client:
+#     build:
+#       context: ./client
+#     ports:
+#       - "80:80"
+
+#   mongodb:
+#     image: mongo
+#     ports:
+#       - "27017:27017"

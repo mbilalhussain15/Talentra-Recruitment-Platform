@@ -1,0 +1,38 @@
+{
+  "name": "sad-talentra-recruitment-platform",
+  "version": "1.0.0",
+  "description": "SAD Talentra Recruitment Platform",
+  "main": "index.js",
+  "private": true,
+  "devDependencies": {
+    "concurrently": "^9.1.2",
+    "dotenv": "^10.0.0"
+  },
+  "workspaces": [
+    "client",
+    "server/authService",
+    "server/applicantService",
+    "server/recruiterService",
+    "server/adminService"
+  ],
+  "scripts": {
+    "install": "npm install --workspaces",
+    "start:authService": "npm --prefix ./server/authService start",
+    "start:applicantService": "npm --prefix ./server/applicantService start",
+    "start:recruiterService": "npm --prefix ./server/recruiterService start",
+    "start:adminService": "npm --prefix ./server/adminService start",
+    "start:client": "npm --prefix ./client run dev",
+    "start": "concurrently --kill-others-on-fail -n client,authService,applicantService,recruiterService,adminService -c green,blue,magenta,cyan,yellow \"npm run start:client\" \"npm run start:authService\" \"npm run start:applicantService\" \"npm run start:recruiterService\" \"npm run start:adminService\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express-rate-limit": "^7.5.0",
+    "react-modal": "^3.16.3",
+    "react-spinners": "^0.15.0",
+    "sonner": "^1.7.4",
+    "uuid": "^11.0.5",
+    "winston": "^3.17.0"
+  }
+}

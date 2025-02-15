@@ -1,0 +1,27 @@
+{
+  "name": "admin-service",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Auth MicroService for Student Management System",
+  "main": "index.js",
+  "scripts": {
+    "start-auth-service": "node index.js",
+    "start": "nodemon index.js"
+  },
+  "author": "Gunjan Kadu",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.7.9",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "fs": "*",
+    "mongoose": "^8.9.2",
+    "mongoose-type-email": "^1.1.2",
+    "nodemailer": "^6.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9"
+  }
+}

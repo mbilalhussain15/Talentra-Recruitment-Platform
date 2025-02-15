@@ -1,0 +1,1 @@
+const JOB_APPLICATIONS = "http://localhost:5002/api/job/getAllJob";
